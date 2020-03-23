@@ -1,0 +1,49 @@
+
+
+Pregunta 1:
+
+Sí, sería posible, de la siguiente manera:
+
+	concatenar(_, [E1,E2|_], [1,2,3,4,5,6,7]).
+
+	E1 = 1
+	E2 = 2;
+	E1 = 2
+	E2 = 3;
+	E1 = 3
+	E2 = 4;
+
+
+Pregunta 2:
+
+Sí, dado que podemos indicarle en el parámetro de salida la lista invertida y Prolog nos
+"devolverá" la lista sin invertir,es decir, dada una salida, podemos también conocer su/s
+entradas.
+
+Por ejemplo:
+
+	 ?- invertir([1,2,3,4],X).
+	 X = [4, 3, 2, 1].
+
+	 ?- invertir(X,[1,2,3,4]).
+	 X = [4, 3, 2, 1]. 
+	
+	 ?- invertir([4,3,2,1],X).
+	 X = [1, 2, 3, 4].
+
+	 ?- invertir(X,[4,3,2,1]).
+	 X = [1, 2, 3, 4].
+
+
+Pregunta 3:
+
+Un predicado es reversible si los parámetros del mismo pueden actuar como argumentos de
+entrada o de salida indistintamente.
+
+
+Pregunta 4:
+
+	?- invertir(X,[3,2,1]),concatenar(X,Y,[1,2,3,4,5,6]).
+	X = [1, 2, 3],
+	Y = [4, 5, 6] 
+	 
